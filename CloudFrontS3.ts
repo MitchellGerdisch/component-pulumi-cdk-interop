@@ -44,7 +44,6 @@ class CloudFrontS3Deployment extends pulumicdk.App {
   }
 }
 
-
 // This resources helps you create a self signed certificate.
 export class CloudFrontS3Comp extends pulumi.ComponentResource {
   public readonly cloudFrontDomain: pulumi.Output<any>;
