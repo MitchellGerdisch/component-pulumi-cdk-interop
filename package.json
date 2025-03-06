@@ -1,6 +1,6 @@
 {
     "name": "cdk-component",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "Component that uses Pulumi CDK interop to deploy CDK constructs",
     "devDependencies": {
         "@types/node": "^18",
