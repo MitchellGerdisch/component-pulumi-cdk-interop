@@ -1,5 +1,5 @@
 {
-    "name": "ts-aws-cdk-in-pulumi",
+    "name": "cdk-component",
     "main": "index.ts",
     "devDependencies": {
         "@types/node": "^18",
