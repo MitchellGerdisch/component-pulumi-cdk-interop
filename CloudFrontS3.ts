@@ -49,7 +49,7 @@ export class CloudFrontS3Comp extends pulumi.ComponentResource {
   public readonly cloudFrontDomain: pulumi.Output<any>;
   public readonly websiteBucketName: pulumi.Output<any>;
 
-  constructor(name: string, args?: CloudFrontS3Comp, opts?: pulumi.ComponentResourceOptions) {
+  constructor(name: string, args?: CloudFrontS3CompArgs, opts?: pulumi.ComponentResourceOptions) {
       super("cdk-component:index:CloudFrontS3Comp", name, args, opts);
 
       const cloudFrontS3Deployment= new CloudFrontS3Deployment(name);
