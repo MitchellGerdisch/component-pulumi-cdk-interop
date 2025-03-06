@@ -1,0 +1,26 @@
+name: cdk-interop
+description: A Pulumi YAML program that consumes a component that uses Pulumi CDK interop and written in typescript.
+runtime: yaml
+variables: {}
+resources: 
+  # Create cloudfront and S3 bucket for website using 
+  # a component (written in typescript) that leverages an AWS CDK construct
+  cloudFront:
+    type: cdk-component:CloudFrontS3Comp
+  # Populate the bucket with website content
+  index.html:
+    type: aws:s3:BucketObject
+    properties:
+      bucket: ${cloudFront.websiteBucketName}
+      source:
+        fn::fileAsset: ./www/index.html
+      contentType: text/html
+  favicon.png:
+    type: aws:s3:BucketObject
+    properties:
+      bucket: ${cloudFront.websiteBucketName}
+      source:
+        fn::fileAsset: ./www/favicon.ico
+      contentType: image/png
+outputs: 
+  cloudFrontUrl: http://${cloudFront.cloudFrontDomain}
