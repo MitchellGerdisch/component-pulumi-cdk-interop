@@ -44,23 +44,20 @@ class CloudFrontS3Deployment extends pulumicdk.App {
   }
 }
 
-
-export interface CloudFrontS3CompArgs {
-  
-}
-
 // This resources helps you create a self signed certificate.
 export class CloudFrontS3Comp extends pulumi.ComponentResource {
   public readonly cloudFrontDomain: pulumi.Output<any>;
   public readonly websiteBucketName: pulumi.Output<any>;
-  private cloudFrontS3Deployment: CloudFrontS3Deployment;
 
   constructor(name: string, args?: CloudFrontS3Comp, opts?: pulumi.ComponentResourceOptions) {
       super("cdk-component:index:CloudFrontS3Comp", name, args, opts);
 
-      this.cloudFrontS3Deployment= new CloudFrontS3Deployment(name);
+      const cloudFrontS3Deployment= new CloudFrontS3Deployment(name);
 
-      this.cloudFrontDomain = this.cloudFrontS3Deployment.outputs['cloudFrontDomain'];
-      this.websiteBucketName = this.cloudFrontS3Deployment.outputs['websiteBucketName'];
+      this.cloudFrontDomain = cloudFrontS3Deployment.outputs['cloudFrontDomain'];
+      this.websiteBucketName = cloudFrontS3Deployment.outputs['websiteBucketName'];
   }
+}
+
+export interface CloudFrontS3CompArgs {
 }
