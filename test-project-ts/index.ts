@@ -4,8 +4,7 @@ import * as aws from "@pulumi/aws";
 import * as fs from "fs";
 import * as mime from "mime-types";
 
-import { CloudFrontS3Comp} from "../CloudFrontS3"; 
-import { start } from "repl";
+import { CloudFrontS3Comp} from "../cloudFrontS3"; 
 
 // Naming convention
 const config = new pulumi.Config();

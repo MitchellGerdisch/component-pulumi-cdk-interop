@@ -1,6 +1,7 @@
 {
     "name": "cdk-component",
-    "main": "index.ts",
+    "version": "1.0.0",
+    "description": "Component that uses Pulumi CDK interop to deploy CDK constructs",
     "devDependencies": {
         "@types/node": "^18",
         "typescript": "^5.0.0"
@@ -9,9 +10,7 @@
         "@aws-solutions-constructs/aws-cloudfront-s3": "^2.77.0",
         "@pulumi/aws": "^6.0.0",
         "@pulumi/aws-native": "^1.25.0",
-        "@pulumi/awsx": "^2.0.2",
         "@pulumi/cdk": "^1.7.0",
-        "@pulumi/cloudflare": "^5.49.0",
         "@pulumi/pulumi": "^3.153.0",
         "@types/mime-types": "^2.1.4",
         "fs": "^0.0.1-security",

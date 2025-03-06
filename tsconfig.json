@@ -13,6 +13,7 @@
         "forceConsistentCasingInFileNames": true
     },
     "files": [
-        "test-project-ts/index.ts"
+        "index.ts",
+        "cloudFrontS3.ts"
     ]
 }
