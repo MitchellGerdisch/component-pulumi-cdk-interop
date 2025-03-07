@@ -56,6 +56,9 @@ export class CloudFrontS3Comp extends pulumi.ComponentResource {
 
       this.cloudFrontDomain = cloudFrontS3Deployment.outputs['cloudFrontDomain'];
       this.websiteBucketName = cloudFrontS3Deployment.outputs['websiteBucketName'];
+
+      this.registerOutputs({});
+
   }
 }
 
